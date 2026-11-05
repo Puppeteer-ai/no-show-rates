@@ -43,7 +43,7 @@ footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); fo
   thead { display:none; }
   table,tbody,tr,td { display:block; width:100%; }
   tr { padding:14px 0; border-bottom:1px solid var(--rule); }
-  td { border:0; padding:4px 0; }
+  td,.setting,.rate,.sample { border:0; padding:4px 0; width:100%; }
 }
 </style>
 </head>
@@ -53,12 +53,12 @@ footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); fo
 <p class="lede">25 published figures, each linked to its source. Measured rates here run from 6.12% to 37.4%, which is why a single national average tells a clinic very little.</p>
 <p class="actions"><a href="data/no-show-rates.csv">Download CSV</a><a href="data/no-show-rates.json">Download JSON</a></p>
 
-<div class="filters" role="group" aria-label="Filter by category"><button type="button" data-filter="" aria-pressed="true">All</button><button type="button" data-filter="All settings">All settings</button><button type="button" data-filter="Medical groups">Medical groups</button><button type="button" data-filter="Primary care">Primary care</button><button type="button" data-filter="Specialty care">Specialty care</button><button type="button" data-filter="Imaging">Imaging</button><button type="button" data-filter="Pediatrics">Pediatrics</button><button type="button" data-filter="Behavioral health">Behavioral health</button><button type="button" data-filter="Dental">Dental</button><button type="button" data-filter="Visit type">Visit type</button><button type="button" data-filter="Hospital outpatient, outside the US">Hospital outpatient, outside the US</button></div>
+<div class="filters" role="group" aria-label="Filter by category"><button type="button" data-filter="" aria-pressed="true">All</button><button type="button" data-filter="Across settings">Across settings</button><button type="button" data-filter="Medical groups">Medical groups</button><button type="button" data-filter="Primary care">Primary care</button><button type="button" data-filter="Specialty care">Specialty care</button><button type="button" data-filter="Imaging">Imaging</button><button type="button" data-filter="Pediatrics">Pediatrics</button><button type="button" data-filter="Behavioral health">Behavioral health</button><button type="button" data-filter="Dental">Dental</button><button type="button" data-filter="Visit type">Visit type</button><button type="button" data-filter="Hospital outpatient, outside the US">Hospital outpatient, outside the US</button></div>
 <table>
 <thead><tr><th>Setting and measure</th><th>Rate</th><th>Sample and period</th><th>Source</th></tr></thead>
 <tbody>
-<tr data-category="All settings">
-<td class="setting"><span class="cat">All settings</span>Average across 105 studies worldwide<small>No-show rate, average across studies</small><small class="note">Highest in Africa (43.0%), lowest in Oceania (13.2%).</small></td>
+<tr data-category="Across settings">
+<td class="setting"><span class="cat">Across settings</span>Average across 105 studies worldwide<small>No-show rate, average across studies</small><small class="note">Highest in Africa (43.0%), lowest in Oceania (13.2%).</small></td>
 <td class="rate"><strong>23%</strong><div class="bar pooled" aria-hidden="true"><b style="left:25.6%"></b></div></td>
 <td class="sample">105 studies<small>Literature review. Worldwide.</small></td>
 <td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/29482948/">Dantas LF et al. No-shows in appointment scheduling: a systematic literature review. Health Policy. 2018.</a><small>Systematic review. Checked against the abstract.</small></td>

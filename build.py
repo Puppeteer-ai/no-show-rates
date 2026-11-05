@@ -8,7 +8,7 @@ RECUPRA = "https://recupra.com/"
 CALCULATOR = "https://recupra.com/resources/no-show-rate-calculator"
 FIELDS = ["id", "category", "setting", "rate_pct", "rate_low", "rate_high", "kind", "measure", "sample", "period",
           "location", "source_type", "citation", "year", "doi", "pmid", "url", "checked_against", "checked_on", "note"]
-ORDER = ["All settings", "Medical groups", "Primary care", "Specialty care", "Imaging", "Pediatrics",
+ORDER = ["Across settings", "Medical groups", "Primary care", "Specialty care", "Imaging", "Pediatrics",
          "Behavioral health", "Dental", "Visit type", "Hospital outpatient, outside the US"]
 SCALE = 90  # bar axis in percent, wide enough for the largest confidence bound
 
@@ -105,7 +105,7 @@ footer {{ margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); f
   thead {{ display:none; }}
   table,tbody,tr,td {{ display:block; width:100%; }}
   tr {{ padding:14px 0; border-bottom:1px solid var(--rule); }}
-  td {{ border:0; padding:4px 0; }}
+  td,.setting,.rate,.sample {{ border:0; padding:4px 0; width:100%; }}
 }}
 </style>
 </head>
