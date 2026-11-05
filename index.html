@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patient No-Show Rates by Clinic Setting</title>
+<meta name="description" content="25 published patient no-show figures by clinic setting, each linked to its source. Free to download as CSV or JSON.">
+<link rel="canonical" href="https://puppeteer-ai.github.io/no-show-rates/">
+<meta name="color-scheme" content="light">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "Published patient no-show rates by clinic setting", "description": "Published patient no-show rates by clinic setting, each linked to its source and checked by hand.", "url": "https://puppeteer-ai.github.io/no-show-rates/", "license": "https://creativecommons.org/licenses/by/4.0/", "isAccessibleForFree": true, "creator": {"@type": "Organization", "name": "Recupra", "url": "https://recupra.com/"}, "dateModified": "2026-11-05", "keywords": ["patient no-show rate", "missed appointments", "outpatient clinics", "healthcare benchmarks"], "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://puppeteer-ai.github.io/no-show-rates/data/no-show-rates.csv"}, {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://puppeteer-ai.github.io/no-show-rates/data/no-show-rates.json"}]}</script>
+<style>
+:root { --paper:#faf7f2; --ink:#1a1f2e; --muted:#5b6070; --wine:#712f4a; --rule:#e8e2d3; --tint:#f0ece4; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+main { max-width:1120px; margin:0 auto; padding:56px 16px 72px; }
+h1,h2 { font-family:Georgia,"Times New Roman",serif; font-weight:400; letter-spacing:-.01em; }
+h1 { font-size:clamp(32px,5vw,48px); line-height:1.1; margin:0 0 16px; max-width:18em; }
+h2 { font-size:24px; margin:48px 0 8px; }
+p { max-width:44em; }
+a { color:var(--wine); }
+.lede { font-size:18px; }
+.actions a { display:inline-block; margin:4px 8px 4px 0; padding:8px 14px; border:1px solid var(--wine); border-radius:4px; text-decoration:none; }
+.filters { display:flex; flex-wrap:wrap; gap:6px; margin:32px 0 12px; }
+.filters button { font:inherit; font-size:14px; padding:5px 11px; color:var(--ink); background:none; border:1px solid var(--rule); border-radius:4px; cursor:pointer; }
+.filters button[aria-pressed=true] { background:var(--wine); border-color:var(--wine); color:#fff; }
+table { width:100%; border-collapse:collapse; font-size:15px; }
+th { text-align:left; font-size:13px; font-weight:500; color:var(--muted); padding:8px 12px 8px 0; border-bottom:1px solid var(--ink); }
+td { vertical-align:top; padding:14px 12px 14px 0; border-bottom:1px solid var(--rule); }
+small { display:block; font-size:13px; line-height:1.4; color:var(--muted); margin-top:2px; }
+.note { color:var(--ink); }
+.cat { display:block; font-size:12px; color:var(--wine); }
+.setting { width:32%; } .rate { width:18%; } .sample { width:20%; } .source { font-size:13px; line-height:1.4; }
+.rate strong { font:400 24px/1.1 Georgia,serif; font-variant-numeric:tabular-nums; }
+.bar { position:relative; height:10px; margin-top:8px; background:var(--tint); border-radius:2px; }
+.bar b { position:absolute; top:0; width:3px; height:10px; margin-left:-1px; background:var(--wine); }
+.bar .ci { position:absolute; top:3px; height:4px; background:#c9a3b2; }
+.bar.target b { background:none; border:1px solid var(--wine); width:5px; }
+ul { max-width:44em; padding-left:20px; } li { margin:6px 0; }
+pre { max-width:44em; white-space:pre-wrap; font-size:14px; background:var(--tint); padding:12px; border-radius:4px; }
+footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); font-size:14px; color:var(--muted); }
+@media (max-width:720px) {
+  main { padding-top:32px; }
+  thead { display:none; }
+  table,tbody,tr,td { display:block; width:100%; }
+  tr { padding:14px 0; border-bottom:1px solid var(--rule); }
+  td { border:0; padding:4px 0; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Patient no-show rates by clinic setting</h1>
+<p class="lede">25 published figures, each linked to its source. Measured rates here run from 6.12% to 37.4%, which is why a single national average tells a clinic very little.</p>
+<p class="actions"><a href="data/no-show-rates.csv">Download CSV</a><a href="data/no-show-rates.json">Download JSON</a></p>
+
+<div class="filters" role="group" aria-label="Filter by category"><button type="button" data-filter="" aria-pressed="true">All</button><button type="button" data-filter="All settings">All settings</button><button type="button" data-filter="Medical groups">Medical groups</button><button type="button" data-filter="Primary care">Primary care</button><button type="button" data-filter="Specialty care">Specialty care</button><button type="button" data-filter="Imaging">Imaging</button><button type="button" data-filter="Pediatrics">Pediatrics</button><button type="button" data-filter="Behavioral health">Behavioral health</button><button type="button" data-filter="Dental">Dental</button><button type="button" data-filter="Visit type">Visit type</button><button type="button" data-filter="Hospital outpatient, outside the US">Hospital outpatient, outside the US</button></div>
+<table>
+<thead><tr><th>Setting and measure</th><th>Rate</th><th>Sample and period</th><th>Source</th></tr></thead>
+<tbody>
+<tr data-category="All settings">
+<td class="setting"><span class="cat">All settings</span>Average across 105 studies worldwide<small>No-show rate, average across studies</small><small class="note">Highest in Africa (43.0%), lowest in Oceania (13.2%).</small></td>
+<td class="rate"><strong>23%</strong><div class="bar pooled" aria-hidden="true"><b style="left:25.6%"></b></div></td>
+<td class="sample">105 studies<small>Literature review. Worldwide.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/29482948/">Dantas LF et al. No-shows in appointment scheduling: a systematic literature review. Health Policy. 2018.</a><small>Systematic review. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Medical groups">
+<td class="setting"><span class="cat">Medical groups</span>Large rural provider network<small>No-show rate</small></td>
+<td class="rate"><strong>8%</strong><div class="bar measured" aria-hidden="true"><b style="left:8.9%"></b></div></td>
+<td class="sample">263,464 appointments<small>2021. Marshfield Clinic Health System.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/38296643/">Shour A, Onitilo AA. Distance Matters: Investigating No-Shows in a Large Rural Provider Network. Clinical Medicine &amp; Research. 2023.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Medical groups">
+<td class="setting"><span class="cat">Medical groups</span>Single-specialty medical groups<small>No-show rate, group aggregate</small><small class="note">7% in 2019, 5.55% in 2020, 5% in 2021 and 2022.</small></td>
+<td class="rate"><strong>6.81%</strong><div class="bar measured" aria-hidden="true"><b style="left:7.6%"></b></div></td>
+<td class="sample">MGMA DataDive, sample not stated<small>2023. United States.</small></td>
+<td class="source"><a href="https://www.mgma.com/mgma-stat/no-show-fees-in-medical-practices-on-the-rise-to-balance-bumpy-attendance-rates">MGMA Stat. No-show fees in medical practices on the rise to balance bumpy attendance rates. January 8, 2025.</a><small>Industry benchmark. Checked against the publisher page.</small></td>
+</tr>
+<tr data-category="Primary care">
+<td class="setting"><span class="cat">Primary care</span>15 family medicine clinics<small>No-show rate, excludes late cancellations</small><small class="note">Late cancellations were a further 6.8%, for 13.7% missed overall.</small></td>
+<td class="rate"><strong>6.9%</strong><div class="bar measured" aria-hidden="true"><b style="left:7.7%"></b></div></td>
+<td class="sample">1,118,236 appointments<small>Jan 2019 to Jun 2023. Pennsylvania, US.</small></td>
+<td class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12306982/">Tuan WJ et al. Predicting Missed Appointments in Primary Care: A Personalized Machine Learning Approach. Annals of Family Medicine. 2025.</a><small>Retrospective study. Checked against the full text.</small></td>
+</tr>
+<tr data-category="Specialty care">
+<td class="setting"><span class="cat">Specialty care</span>Academic hand surgery practice, safety-net hospital<small>No-show rate</small></td>
+<td class="rate"><strong>25.8%</strong><div class="bar measured" aria-hidden="true"><b style="left:28.7%"></b></div></td>
+<td class="sample">6,539 office visits, 3,586 patients<small>2022 to 2023. Southwestern US.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/42670608/">Ardizzone CA et al. Factors Affecting Clinic Visit No-Shows at an Academic Medical Center in the American Southwest. Hand. 2026.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Specialty care">
+<td class="setting"><span class="cat">Specialty care</span>Academic sleep clinic<small>No-show rate</small></td>
+<td class="rate"><strong>21.2%</strong><div class="bar measured" aria-hidden="true"><b style="left:23.6%"></b></div></td>
+<td class="sample">2,532 visits<small>10 months, dates not in abstract. St. Louis, US.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/32933644/">Cheung DL et al. No-show rates to a sleep clinic: drivers and determinants. Journal of Clinical Sleep Medicine. 2020.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Specialty care">
+<td class="setting"><span class="cat">Specialty care</span>10 main clinics at a VA medical center<small>No-show rate, mean across clinics</small><small class="note">Audiology lowest (12.6%), gastrointestinal highest (25.7%).</small></td>
+<td class="rate"><strong>18.8%</strong><small>12.6% to 25.7%</small><div class="bar measured" aria-hidden="true"><i class="ci" style="left:14.0%;width:14.6%"></i><b style="left:20.9%"></b></div></td>
+<td class="sample">About 1 million appointments a year (FY2006 to FY2008)<small>FY1997 to FY2008 administrative data. Houston, Texas, US.</small></td>
+<td class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4714455/">Kheirkhah P et al. Prevalence, predictors and economic consequences of no-shows. BMC Health Services Research. 2016.</a><small>Retrospective study. Checked against the full text.</small></td>
+</tr>
+<tr data-category="Specialty care">
+<td class="setting"><span class="cat">Specialty care</span>Adult ophthalmology center<small>No-show rate</small></td>
+<td class="rate"><strong>16.9%</strong><div class="bar measured" aria-hidden="true"><b style="left:18.8%"></b></div></td>
+<td class="sample">62,678 appointments<small>2025. New York, US.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/42762097/">Doiphode A et al. Predictors and Patient-Reported Reasons for Missed Appointments in an Urban Ophthalmology Center. Ophthalmic Epidemiology. 2026.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Specialty care">
+<td class="setting"><span class="cat">Specialty care</span>Academic urology, new patients<small>No-show rate, excludes rescheduled and cancelled visits</small></td>
+<td class="rate"><strong>14.3%</strong><div class="bar measured" aria-hidden="true"><b style="left:15.9%"></b></div></td>
+<td class="sample">6,060 appointments<small>Jul 2017 to Jul 2018. New York, US.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/37287168/">Caputo JM et al. Increased Time between Scheduling Date and Appointment Date Results in Increased No-Show Rates in the Academic Urology Practice. Urology Practice. 2020.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Specialty care">
+<td class="setting"><span class="cat">Specialty care</span>Orthopedic multispecialty institution<small>No-show rate</small></td>
+<td class="rate"><strong>11.5%</strong><div class="bar measured" aria-hidden="true"><b style="left:12.8%"></b></div></td>
+<td class="sample">All scheduled appointments, count not in abstract<small>2016. Not stated in abstract.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/30418378/">Lee SR et al. Correlation of Appointment Times and Subspecialty With the No-Show Rates in an Orthopedic Ambulatory Clinic. Journal of Healthcare Management. 2018.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Specialty care">
+<td class="setting"><span class="cat">Specialty care</span>Academic urogynecology practice<small>No-show rate</small></td>
+<td class="rate"><strong>6.7%</strong><div class="bar measured" aria-hidden="true"><b style="left:7.4%"></b></div></td>
+<td class="sample">6,729 encounters<small>2022. Not stated in abstract.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/38484248/">Melnyk AI et al. No-Show Rates in a Urogynecology Clinic. Urogynecology. 2024.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Imaging">
+<td class="setting"><span class="cat">Imaging</span>Screening mammography<small>No-show rate</small></td>
+<td class="rate"><strong>6.2%</strong><div class="bar measured" aria-hidden="true"><b style="left:6.9%"></b></div></td>
+<td class="sample">5,060 women scheduled<small>Not stated in abstract. Authors&#x27; institution.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/33792894/">Hensing WL et al. Racial differences in no-show rates for screening mammography. Cancer. 2021.</a><small>Case-control study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Pediatrics">
+<td class="setting"><span class="cat">Pediatrics</span>Pediatric specialty appointments, academic safety-net system<small>No-show rate, completed or missed visits only</small></td>
+<td class="rate"><strong>27.82%</strong><div class="bar measured" aria-hidden="true"><b style="left:30.9%"></b></div></td>
+<td class="sample">Subset of 90,712 appointments<small>Mar 2020 to Dec 2022. Academic safety-net system.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/40138178/">Ojinnaka CO et al. Telemedicine and Missed Appointments Among Pediatric Patients of an Academic Safety-Net System. Telemedicine and e-Health. 2025.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Pediatrics">
+<td class="setting"><span class="cat">Pediatrics</span>General pediatrics, academic safety-net system<small>No-show rate, completed or missed visits only</small></td>
+<td class="rate"><strong>20.36%</strong><div class="bar measured" aria-hidden="true"><b style="left:22.6%"></b></div></td>
+<td class="sample">Subset of 90,712 appointments<small>Mar 2020 to Dec 2022. Academic safety-net system.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/40138178/">Ojinnaka CO et al. Telemedicine and Missed Appointments Among Pediatric Patients of an Academic Safety-Net System. Telemedicine and e-Health. 2025.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Pediatrics">
+<td class="setting"><span class="cat">Pediatrics</span>Pediatric orthopaedic surgery clinic<small>No-show rate</small></td>
+<td class="rate"><strong>6.61%</strong><div class="bar measured" aria-hidden="true"><b style="left:7.3%"></b></div></td>
+<td class="sample">10,078 encounters<small>2019. Midwestern US.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/40433336/">Malloy M et al. Identifying Risk Factors for Appointment No-Shows in a Pediatric Orthopaedic Surgery Clinic. Journal of the Pediatric Orthopaedic Society of North America. 2023.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Behavioral health">
+<td class="setting"><span class="cat">Behavioral health</span>Outpatient mental health clinics, subsequent appointments<small>Nonattendance, pooled prevalence (95% CI)</small><small class="note">Very high heterogeneity (I2=99%).</small></td>
+<td class="rate"><strong>64%</strong><small>42% to 82%</small><div class="bar pooled" aria-hidden="true"><i class="ci" style="left:46.7%;width:44.4%"></i><b style="left:71.1%"></b></div></td>
+<td class="sample">N=3,634, from 35 studies overall<small>Search to July 2024. Not stated in abstract.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/42192244/">Kuppili et al. Factors Associated With Nonattendance at Nonspecialist Outpatient Mental Health Clinics: Systematic Review and Meta-Analysis. Psychiatric Services. 2026.</a><small>Meta-analysis. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Behavioral health">
+<td class="setting"><span class="cat">Behavioral health</span>Outpatient mental health clinics, second appointment<small>Nonattendance, pooled prevalence (95% CI)</small></td>
+<td class="rate"><strong>42%</strong><small>36% to 47%</small><div class="bar pooled" aria-hidden="true"><i class="ci" style="left:40.0%;width:12.2%"></i><b style="left:46.7%"></b></div></td>
+<td class="sample">N=4,377, from 35 studies overall<small>Search to July 2024. Not stated in abstract.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/42192244/">Kuppili et al. Factors Associated With Nonattendance at Nonspecialist Outpatient Mental Health Clinics: Systematic Review and Meta-Analysis. Psychiatric Services. 2026.</a><small>Meta-analysis. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Behavioral health">
+<td class="setting"><span class="cat">Behavioral health</span>Outpatient substance use treatment, before quality improvement<small>No-show rate, self-reported</small><small class="note">19.9% after the interventions, with no comparison group.</small></td>
+<td class="rate"><strong>37.4%</strong><div class="bar measured" aria-hidden="true"><b style="left:41.6%"></b></div></td>
+<td class="sample">67 treatment organizations<small>Jan 2008 to Aug 2010. 10 US states.</small></td>
+<td class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3962267/">Molfenter T. Reducing appointment no-shows: going from theory to practice. Substance Use &amp; Misuse. 2013.</a><small>Before-and-after study. Checked against the full text.</small></td>
+</tr>
+<tr data-category="Behavioral health">
+<td class="setting"><span class="cat">Behavioral health</span>Outpatient mental health clinics, first appointment<small>Nonattendance, pooled prevalence (95% CI)</small></td>
+<td class="rate"><strong>34%</strong><small>24% to 45%</small><div class="bar pooled" aria-hidden="true"><i class="ci" style="left:26.7%;width:23.3%"></i><b style="left:37.8%"></b></div></td>
+<td class="sample">N=2,668, from 35 studies overall<small>Search to July 2024. Not stated in abstract.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/42192244/">Kuppili et al. Factors Associated With Nonattendance at Nonspecialist Outpatient Mental Health Clinics: Systematic Review and Meta-Analysis. Psychiatric Services. 2026.</a><small>Meta-analysis. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Behavioral health">
+<td class="setting"><span class="cat">Behavioral health</span>Outpatient psychiatry, academic health center<small>No-show rate, in-person and virtual</small><small class="note">No significant difference between visit types.</small></td>
+<td class="rate"><strong>10.46%</strong><div class="bar measured" aria-hidden="true"><b style="left:11.6%"></b></div></td>
+<td class="sample">219,007 visits<small>2020 to 2025. Academic health center.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/42495794/">Heineman B, Chan G, Jain N. Sustained Utilization of Video-Based Outpatient Psychiatry Visits Following the COVID-19 Public Health Emergency at an Academic Health Center. Telemedicine and e-Health. 2026.</a><small>Repeated cross-sectional study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Dental">
+<td class="setting"><span class="cat">Dental</span>Dental practices, cancellations and no-shows combined<small>Target of 5% or less, not a measured rate</small></td>
+<td class="rate"><strong>&le; 5%</strong><div class="bar target" aria-hidden="true"><b style="left:5.6%"></b></div></td>
+<td class="sample">Not applicable<small>Not applicable. United States.</small></td>
+<td class="source"><a href="https://www.ada.org/resources/practice/practice-management/measuring-success20160428t155202">American Dental Association. Key Performance Indicators (KPIs).</a><small>Professional guidance. Checked against the publisher page.</small></td>
+</tr>
+<tr data-category="Visit type">
+<td class="setting"><span class="cat">Visit type</span>In-person visits, safety-net academic health center<small>No-show rate</small></td>
+<td class="rate"><strong>25%</strong><div class="bar measured" aria-hidden="true"><b style="left:27.8%"></b></div></td>
+<td class="sample">See paper<small>Mar 2020 to Dec 2022. Safety-net academic health center with federally qualified clinics.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/38373529/">Ojinnaka CO et al. Telemedicine Reduces Missed Appointments but Disparities Persist. American Journal of Preventive Medicine. 2024.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Visit type">
+<td class="setting"><span class="cat">Visit type</span>Telemedicine visits, safety-net academic health center<small>No-show rate</small></td>
+<td class="rate"><strong>12%</strong><div class="bar measured" aria-hidden="true"><b style="left:13.3%"></b></div></td>
+<td class="sample">See paper<small>Mar 2020 to Dec 2022. Safety-net academic health center with federally qualified clinics.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/38373529/">Ojinnaka CO et al. Telemedicine Reduces Missed Appointments but Disparities Persist. American Journal of Preventive Medicine. 2024.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Hospital outpatient, outside the US">
+<td class="setting"><span class="cat">Hospital outpatient, outside the US</span>Academic medical center outpatient department<small>No-show rate</small></td>
+<td class="rate"><strong>16.9%</strong><div class="bar measured" aria-hidden="true"><b style="left:18.8%"></b></div></td>
+<td class="sample">2,132,577 appointments<small>2015. Northern Taiwan.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/30907780/">Tsai WC et al. Factors of missed appointments at an academic medical center in Taiwan. Journal of the Chinese Medical Association. 2019.</a><small>Cross-sectional study. Checked against the abstract.</small></td>
+</tr>
+<tr data-category="Hospital outpatient, outside the US">
+<td class="setting"><span class="cat">Hospital outpatient, outside the US</span>Large tertiary hospital<small>No-show rate</small></td>
+<td class="rate"><strong>6.12%</strong><div class="bar measured" aria-hidden="true"><b style="left:6.8%"></b></div></td>
+<td class="sample">1,252,127 appointments<small>Sep to Nov 2018. Seoul, Korea.</small></td>
+<td class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/33810096/">Suk MY et al. Evaluation of Patient No-Shows in a Tertiary Hospital: Focusing on Modes of Appointment-Making and Type of Appointment. International Journal of Environmental Research and Public Health. 2021.</a><small>Retrospective study. Checked against the abstract.</small></td>
+</tr>
+</tbody>
+</table>
+
+<h2>How to read these numbers</h2>
+<ul>
+<li><strong>Do not rank them.</strong> Studies count differently. Some divide by every scheduled visit, others only by completed and missed visits, and late cancellations are sometimes counted separately.</li>
+<li><strong>Most are single sites.</strong> A study from one academic or safety-net system describes that system, not its whole specialty.</li>
+<li><strong>Population and visit type matter.</strong> One safety-net center reports 25% for in-person visits and 12% for telemedicine, so compare against a similar clinic.</li>
+<li><strong>The pandemic is in some periods.</strong> Check the dates before treating a figure as current.</li>
+<li><strong>Bars</strong> share a 0% to 90% axis. The lighter band is a range or a confidence interval, where the source gives one. The hollow marker is a target, not a measurement.</li>
+</ul>
+
+<h2>What is included</h2>
+<p>A figure is listed when the source states the rate directly and says what population it describes. Each was checked against the abstract, full text or publisher page named in its row on 2026-11-05. Nothing here is modeled, blended or averaged by us. This is a selection, not a systematic review. Physical therapy, oncology and general dentistry have no measured row yet, because the sources we found were small, or we could not read them.</p>
+<p>Found a mistake or a better source? <a href="https://github.com/Puppeteer-ai/no-show-rates/issues">Open an issue</a>.</p>
+
+<h2>Cite or reuse</h2>
+<p>The data is free to use under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Please cite the original study for any single figure, and this page for the compilation.</p>
+<pre>Recupra. Patient no-show rates by clinic setting [dataset]. https://puppeteer-ai.github.io/no-show-rates/</pre>
+
+<footer>
+<p>Compiled by <a href="https://recupra.com/">Recupra</a>, which sells no-show recovery software to clinics. None of these figures are Recupra's, and no patient data is included. To work out your own clinic's rate and what it costs, use the <a href="https://recupra.com/resources/no-show-rate-calculator">no-show rate calculator</a>.</p>
+</footer>
+</main>
+<script>
+var buttons = document.querySelectorAll('.filters button');
+buttons.forEach(function (b) {
+  b.addEventListener('click', function () {
+    buttons.forEach(function (o) { o.setAttribute('aria-pressed', o === b); });
+    document.querySelectorAll('tbody tr').forEach(function (tr) {
+      tr.hidden = b.dataset.filter !== '' && tr.dataset.category !== b.dataset.filter;
+    });
+  });
+});
+</script>
+</body>
+</html>
